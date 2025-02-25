@@ -31,7 +31,7 @@
     </script>
     <title>base64 anything</title>
   </head>
-  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 dark-transition">
+  <body class="bg-white text-stone-800 dark:bg-stone-900 dark:text-stone-100 dark-transition">
     <div id="app" class="max-w-7xl mx-auto p-4 md:p-8 flex flex-col min-h-screen">
       <header class="flex justify-between items-center mb-8">
         <h1 class="text-3xl font-bold text-blue-600 dark:text-blue-400">base64 anything</h1>
@@ -39,43 +39,43 @@
       </header>
 
       <main class="flex flex-col md:flex-row gap-8 flex-1">
-        <section id="encode-section" class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-md flex-1 dark-transition">
+        <section id="encode-section" class="bg-stone-100 dark:bg-stone-800 rounded-lg p-6 shadow-md flex-1 dark-transition">
           <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">encode file to base64</h2>
-          <div class="dropzone border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-8 text-center mb-4 cursor-pointer dark-transition" id="file-dropzone">
+          <div class="dropzone border-2 border-dashed border-stone-300 dark:border-stone-600 rounded-lg p-8 text-center mb-4 cursor-pointer dark-transition" id="file-dropzone">
             <p class="mb-4">drag and drop a file here, or</p>
             <input type="file" id="file-input" class="hidden" />
             <label for="file-input" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg cursor-pointer transition-colors duration-200">choose a file</label>
           </div>
           <div class="result-container">
-            <textarea id="encode-result" placeholder="base64 output will appear here..." readonly class="w-full min-h-[150px] p-2 border border-gray-300 dark:border-gray-600 rounded-lg resize-y bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-mono mb-2 dark-transition"></textarea>
+            <textarea id="encode-result" placeholder="base64 output will appear here..." readonly class="w-full min-h-[150px] p-2 border border-stone-300 dark:border-stone-600 rounded-lg resize-y bg-white dark:bg-stone-900 text-stone-800 dark:text-stone-100 font-mono mb-2 dark-transition"></textarea>
             <button id="copy-encode" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg mr-2 transition-colors duration-200">copy</button>
             <button id="download-encode" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition-colors duration-200">download as .txt</button>
           </div>
         </section>
 
-        <section id="decode-section" class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-md flex-1 dark-transition">
+        <section id="decode-section" class="bg-stone-100 dark:bg-stone-800 rounded-lg p-6 shadow-md flex-1 dark-transition">
           <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">decode base64 to file</h2>
           <div class="mb-4">
-            <textarea id="decode-input" placeholder="paste base64 string here..." class="w-full min-h-[150px] p-2 border border-gray-300 dark:border-gray-600 rounded-lg resize-y bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-mono mb-2 dark-transition"></textarea>
+            <textarea id="decode-input" placeholder="paste base64 string here..." class="w-full min-h-[150px] p-2 border border-stone-300 dark:border-stone-600 rounded-lg resize-y bg-white dark:bg-stone-900 text-stone-800 dark:text-stone-100 font-mono mb-2 dark-transition"></textarea>
             <button id="decode-btn" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition-colors duration-200">decode</button>
           </div>
           <div class="result-container">
-            <div id="decode-result" class="min-h-[100px] p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 mb-4 dark-transition">
+            <div id="decode-result" class="min-h-[100px] p-4 border border-stone-300 dark:border-stone-600 rounded-lg bg-white dark:bg-stone-900 mb-4 dark-transition">
               <p>decoded file will appear here...</p>
             </div>
             <div class="text-sm mb-4" id="file-info"></div>
-            <div class="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-gray-300 dark:border-gray-600 dark-transition" id="file-type-container" style="display: none;">
+            <div class="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-stone-300 dark:border-stone-600 dark-transition" id="file-type-container" style="display: none;">
               <label for="file-extension" class="block mb-2 font-bold">file extension:</label>
-              <input type="text" id="file-extension" placeholder="e.g. jpg, pdf, txt" class="w-full p-2 mb-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 dark-transition"/>
-              <p class="text-sm text-gray-600 dark:text-gray-400">the file type couldn't be determined. please specify a file extension for the decoded file.</p>
+              <input type="text" id="file-extension" placeholder="e.g. jpg, pdf, txt" class="w-full p-2 mb-2 border border-stone-300 dark:border-stone-600 rounded-lg bg-white dark:bg-stone-900 text-stone-800 dark:text-stone-100 dark-transition"/>
+              <p class="text-sm text-stone-600 dark:text-stone-400">the file type couldn't be determined. please specify a file extension for the decoded file.</p>
             </div>
             <button id="download-decode" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition-colors duration-200">download file</button>
           </div>
         </section>
       </main>
 
-      <footer class="mt-8 text-center py-4 border-t border-gray-300 dark:border-gray-700 dark-transition">
-        <p>made with ❤️ - <a href="https://github.com/gjtiquia/base64-anything" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">github</a></p>
+      <footer class="mt-8 text-center py-4 border-t border-stone-300 dark:border-stone-700 dark-transition">
+        <p><a href="https://github.com/gjtiquia/base64-anything" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">github source code</a></p>
       </footer>
     </div>
     <script type="module" src="/src/main.ts"></script>
