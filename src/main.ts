@@ -1,5 +1,3 @@
-import './style.css'
-
 /**
  * Base64 Encoder/Decoder App
  * A simple web app to encode files to base64 and decode base64 strings back to files
@@ -31,9 +29,11 @@ function initTheme(): void {
   const savedTheme = localStorage.getItem('theme');
 
   if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
     document.body.setAttribute('data-theme', 'dark');
     themeToggle.textContent = '☀️';
   } else {
+    document.documentElement.removeAttribute('data-theme');
     document.body.removeAttribute('data-theme');
     themeToggle.textContent = '🌙';
   }
@@ -42,10 +42,12 @@ function initTheme(): void {
 // Toggle theme between light and dark
 function toggleTheme(): void {
   if (document.body.hasAttribute('data-theme')) {
+    document.documentElement.removeAttribute('data-theme');
     document.body.removeAttribute('data-theme');
     localStorage.setItem('theme', 'light');
     themeToggle.textContent = '🌙';
   } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
     document.body.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
     themeToggle.textContent = '☀️';

@@ -1,9 +1,63 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-transition">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark">
+    <!-- Critical CSS to prevent flash -->
+    <style>
+      html.no-transition * {
+        transition: none !important;
+      }
+      
+      html {
+        background-color: #ffffff;
+      }
+
+      html[data-theme="dark"] {
+        background-color: #1a1a1a;
+      }
+      
+      :root {
+        --color-background: #ffffff;
+        --color-text: #333333;
+        --color-surface: #f5f5f5;
+      }
+      
+      [data-theme="dark"] {
+        --color-background: #1a1a1a;
+        --color-text: #f5f5f5;
+        --color-surface: #333333;
+      }
+      
+      body {
+        background-color: var(--color-background);
+        color: var(--color-text);
+        margin: 0;
+      }
+    </style>
+    <!-- Preload the CSS file -->
+    <link rel="preload" href="./src/style.css" as="style">
+    <link rel="stylesheet" href="./src/style.css">
+    <script>
+      // Apply theme from localStorage immediately to prevent flash
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      // Apply dark theme if explicitly saved as dark or not saved but user prefers dark
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.body.setAttribute('data-theme', 'dark');
+      }
+      
+      // Remove the no-transition class after a short delay
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          document.documentElement.classList.remove('no-transition');
+        }, 100);
+      });
+    </script>
     <title>Base64 Anything</title>
   </head>
   <body>
