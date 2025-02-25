@@ -1,52 +1,56 @@
-# Base64 Anything
+# base64 anything
 
-A web app to encode any file into base64, or decode any base64 text back into any file format.
+a web app to encode any file into base64, or decode any base64 text back into any file format.
 
-## Features
+## features
 
-- ✅ Encode any file to base64 with a simple drag & drop
-- ✅ Decode base64 strings back to their original file format
-- ✅ Minimalistic, fast and simple interface
-- ✅ Works on both desktop and mobile devices
-- ✅ Dark mode support based on user preference
-- ✅ Drag and drop file uploads
-- ✅ Copy encoded base64 to clipboard
-- ✅ Download encoded base64 as text file
-- ✅ Download decoded files directly
+- ✅ encode any file to base64 with a simple drag & drop
+- ✅ decode base64 strings back to their original file format
+- ✅ minimalistic, fast and simple interface
+- ✅ works on both desktop and mobile devices
+- ✅ dark mode support based on user preference
+- ✅ drag and drop file uploads
+- ✅ copy encoded base64 to clipboard
+- ✅ download encoded base64 as text file
+- ✅ download decoded files directly
 
-## Tech Stack
+## tech stack
 
-- [Vite](https://vitejs.dev/) - Fast development & building
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [PNPM](https://pnpm.io/) - Fast, disk space efficient package manager
+- [vite](https://vitejs.dev/) - fast development & building
+- [typescript](https://www.typescriptlang.org/) - type safety
+- [pnpm](https://pnpm.io/) - fast, disk space efficient package manager
 
-That's it! Minimalistic, fast, and simple.
+that's it! minimalistic, fast, and simple.
 
-## Development
+## development
 
 ```bash
-# Install dependencies
+# install dependencies
 pnpm install
 
-# Start development server
+# start development server
 pnpm dev
 
-# Build for production
+# build for production
 pnpm build
 
-# Preview production build
+# preview production build
 pnpm preview
 ```
 
-## How It Works
+## how it works
 
-The app uses the browser's built-in APIs to handle file operations:
+the app uses the browser's built-in apis to handle file operations:
 
-1. **Encoding:** Uses `FileReader` to read files and convert them to base64.
-2. **Decoding:** Uses `atob` to decode base64 strings and creates downloadable files.
-3. **Dark Mode:** Detects system preference and allows manual toggle.
+1. **encoding:** uses `FileReader` to read files and convert them to base64.
+2. **decoding:** uses `atob` to decode base64 strings and creates downloadable files.
+3. **dark mode:** detects system preference and allows manual toggle.
 
-## License
+## side note
+
+this was an excuse to play with cursor + claude 3.7 sonnet thinking model😂 amazed and had some fun
+
+## license
 
 MIT
 

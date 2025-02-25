@@ -58,53 +58,53 @@
         }, 100);
       });
     </script>
-    <title>Base64 Anything</title>
+    <title>base64 anything</title>
   </head>
   <body>
     <div id="app">
       <header>
-        <h1>Base64 Anything</h1>
+        <h1>base64 anything</h1>
         <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
       </header>
 
       <main>
         <section id="encode-section">
-          <h2>Encode File to Base64</h2>
+          <h2>encode file to base64</h2>
           <div class="dropzone" id="file-dropzone">
-            <p>Drag and drop a file here, or</p>
+            <p>drag and drop a file here, or</p>
             <input type="file" id="file-input" />
-            <label for="file-input">Choose a file</label>
+            <label for="file-input">choose a file</label>
           </div>
           <div class="result-container">
-            <textarea id="encode-result" placeholder="Base64 output will appear here..." readonly></textarea>
-            <button id="copy-encode" class="copy-btn">Copy</button>
-            <button id="download-encode" class="download-btn">Download as .txt</button>
+            <textarea id="encode-result" placeholder="base64 output will appear here..." readonly></textarea>
+            <button id="copy-encode" class="copy-btn">copy</button>
+            <button id="download-encode" class="download-btn">download as .txt</button>
           </div>
         </section>
 
         <section id="decode-section">
-          <h2>Decode Base64 to File</h2>
+          <h2>decode base64 to file</h2>
           <div class="input-container">
-            <textarea id="decode-input" placeholder="Paste Base64 string here..."></textarea>
-            <button id="decode-btn">Decode</button>
+            <textarea id="decode-input" placeholder="paste base64 string here..."></textarea>
+            <button id="decode-btn">decode</button>
           </div>
           <div class="result-container">
             <div id="decode-result">
-              <p>Decoded file will appear here...</p>
+              <p>decoded file will appear here...</p>
             </div>
             <div class="file-info" id="file-info"></div>
             <div class="file-type-container" id="file-type-container" style="display: none;">
-              <label for="file-extension">File Extension:</label>
+              <label for="file-extension">file extension:</label>
               <input type="text" id="file-extension" placeholder="e.g. jpg, pdf, txt" />
-              <p class="hint">The file type couldn't be determined. Please specify a file extension for the decoded file.</p>
+              <p class="hint">the file type couldn't be determined. please specify a file extension for the decoded file.</p>
             </div>
-            <button id="download-decode" class="download-btn">Download File</button>
+            <button id="download-decode" class="download-btn">download file</button>
           </div>
         </section>
       </main>
 
       <footer>
-        <p>Made with ❤️ - <a href="https://github.com/gjtiquia/base64-anything" target="_blank">GitHub</a></p>
+        <p>made with ❤️ - <a href="https://github.com/gjtiquia/base64-anything" target="_blank">github</a></p>
       </footer>
     </div>
     <script type="module" src="/src/main.ts"></script>

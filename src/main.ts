@@ -111,7 +111,7 @@ function formatFileSize(bytes: number): string {
 async function copyToClipboard(text: string): Promise<void> {
   try {
     await navigator.clipboard.writeText(text);
-    showToast('Copied to clipboard!');
+    showToast('copied to clipboard!');
   } catch (error) {
     console.error('Failed to copy:', error);
 
@@ -123,7 +123,7 @@ async function copyToClipboard(text: string): Promise<void> {
     textarea.select();
     document.execCommand('copy');
     document.body.removeChild(textarea);
-    showToast('Copied to clipboard!');
+    showToast('copied to clipboard!');
   }
 }
 
@@ -173,16 +173,16 @@ function showToast(message: string): void {
 async function handleFileSelect(file: File): Promise<void> {
   try {
     encodedFileName = file.name;
-    showToast(`Processing file: ${file.name}`);
-    encodeResult.value = 'Encoding...';
+    showToast(`processing file: ${file.name}`);
+    encodeResult.value = 'encoding...';
 
     const base64String = await encodeFile(file);
     encodeResult.value = base64String;
 
-    showToast('File encoded successfully!');
+    showToast('file encoded successfully!');
   } catch (error) {
     console.error('Error encoding file:', error);
-    encodeResult.value = 'Error encoding file. Please try again.';
+    encodeResult.value = 'error encoding file. please try again.';
   }
 }
 
@@ -191,7 +191,7 @@ function handleDecode(): void {
   const base64String = decodeInput.value.trim();
 
   if (!base64String) {
-    showToast('Please enter a base64 string');
+    showToast('please enter a base64 string');
     return;
   }
 
@@ -200,15 +200,15 @@ function handleDecode(): void {
 
     // Show file information
     const size = formatFileSize(decodedBlob.size);
-    const type = decodedBlob.type || 'Unknown type';
+    const type = decodedBlob.type || 'unknown type';
 
     fileInfo.innerHTML = `
-      <p><strong>File Size:</strong> ${size}</p>
-      <p><strong>File Type:</strong> ${type}</p>
+      <p><strong>file size:</strong> ${size}</p>
+      <p><strong>file type:</strong> ${type}</p>
     `;
 
     // Update UI
-    decodeResult.innerHTML = '<p>Decoding successful! Click the download button to save the file.</p>';
+    decodeResult.innerHTML = '<p>decoding successful! click the download button to save the file.</p>';
     downloadDecodeBtn.style.display = 'inline-block';
 
     // Show or hide file type input based on whether the type was detected
@@ -219,10 +219,10 @@ function handleDecode(): void {
       fileTypeContainer.style.display = 'none';
     }
 
-    showToast('Base64 decoded successfully!');
+    showToast('base64 decoded successfully!');
   } catch (error) {
     console.error('Decoding error:', error);
-    decodeResult.innerHTML = '<p>Error decoding base64. Please check your input and try again.</p>';
+    decodeResult.innerHTML = '<p>error decoding base64. please check your input and try again.</p>';
     fileInfo.innerHTML = '';
     downloadDecodeBtn.style.display = 'none';
     fileTypeContainer.style.display = 'none';
@@ -370,7 +370,7 @@ document.head.appendChild(style);
 setTimeout(() => {
   // Show a sample base64 string to decode (this is a tiny text file)
   const sampleBase64 = 'SGVsbG8gV29ybGQhIFRoaXMgaXMgYSB0ZXN0IGZpbGUuDQpUaGFuayB5b3UgZm9yIHVzaW5nIEJhc2U2NCBBbnl0aGluZy4=';
-  showToast('💡 Tip: Try decoding the sample base64 that was just added!');
+  showToast('💡 tip: try decoding the sample base64 that was just added!');
 
   if (decodeInput) {
     decodeInput.value = sampleBase64;
