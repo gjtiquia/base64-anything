@@ -345,11 +345,11 @@ style.textContent = `
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%) translateY(100px);
-    background-color: var(--color-surface);
-    color: var(--color-text);
+    background-color: #57534e; /* Stone-600 for dark mode compatibility */
+    color: white;
     padding: 12px 24px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    border-radius: 0.5rem; /* Rounded corners matching site elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
     z-index: 1000;
