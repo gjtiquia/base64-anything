@@ -29,26 +29,22 @@ function initTheme(): void {
   const savedTheme = localStorage.getItem('theme');
 
   if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme)) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    document.body.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('dark');
     themeToggle.textContent = '☀️';
   } else {
-    document.documentElement.removeAttribute('data-theme');
-    document.body.removeAttribute('data-theme');
+    document.documentElement.classList.remove('dark');
     themeToggle.textContent = '🌙';
   }
 }
 
 // Toggle theme between light and dark
 function toggleTheme(): void {
-  if (document.body.hasAttribute('data-theme')) {
-    document.documentElement.removeAttribute('data-theme');
-    document.body.removeAttribute('data-theme');
+  if (document.documentElement.classList.contains('dark')) {
+    document.documentElement.classList.remove('dark');
     localStorage.setItem('theme', 'light');
     themeToggle.textContent = '🌙';
   } else {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    document.body.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('dark');
     localStorage.setItem('theme', 'dark');
     themeToggle.textContent = '☀️';
   }
