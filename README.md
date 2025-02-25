@@ -46,9 +46,10 @@ the app uses the browser's built-in apis to handle file operations:
 2. **decoding:** uses `atob` to decode base64 strings and creates downloadable files.
 3. **dark mode:** detects system preference and allows manual toggle.
 
-## side note
+## side notes
 
-this was an excuse to play with cursor + claude 3.7 sonnet thinking model😂 amazed and had some fun
+- this was an excuse to play with cursor + claude 3.7 sonnet thinking model😂 amazed and had some fun
+- big files generally dont work lmao. mobile clipboard cant support that much text, and files up to the GBs basically cant even decode haha
 
 ## license
 
