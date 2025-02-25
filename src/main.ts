@@ -261,7 +261,13 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // Dropzone click should trigger file input
-  fileDropzone.addEventListener('click', () => {
+  fileDropzone.addEventListener('click', (e) => {
+    // Check if the click target is the file input itself or its label - if so, don't trigger another click
+    const target = e.target as HTMLElement;
+    if (target === fileInput ||
+      target.tagName === 'LABEL' && target.getAttribute('for') === 'file-input') {
+      return;
+    }
     fileInput.click();
   });
 
